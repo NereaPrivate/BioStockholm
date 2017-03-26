@@ -99,16 +99,16 @@ namespace BioStockholm.Web.Business
         /// Returns all contact pages beneath the main contacts container
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ContactPage> GetContactPages()
-        {
-            var contactsRootPageLink = _contentLoader.Get<StartPage>(SiteDefinition.Current.StartPage).ContactsPageLink;
+        //public IEnumerable<ContactPage> GetContactPages()
+        //{
+        //    var contactsRootPageLink = _contentLoader.Get<NereaStartPage>(SiteDefinition.Current.StartPage).ContactsPageLink;
 
-            if (ContentReference.IsNullOrEmpty(contactsRootPageLink))
-            {
-                throw new ConfigurationErrorsException("No contact page root specified in site settings, unable to retrieve contact pages");
-            }
+        //    if (ContentReference.IsNullOrEmpty(contactsRootPageLink))
+        //    {
+        //        throw new ConfigurationErrorsException("No contact page root specified in site settings, unable to retrieve contact pages");
+        //    }
 
-            return _contentLoader.GetChildren<ContactPage>(contactsRootPageLink).OrderBy(p => p.PageName);
-        }
+        //    return _contentLoader.GetChildren<ContactPage>(contactsRootPageLink).OrderBy(p => p.PageName);
+        //}
     }
 }

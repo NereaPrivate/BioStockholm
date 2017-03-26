@@ -376,6 +376,7 @@
     <Compile Include="Controllers\PageListBlockController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\NereaStartPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Controllers\VideoFileController.cs" />
     <Compile Include="Global.asax.cs">
@@ -404,6 +405,7 @@
     <Compile Include="Models\Pages\IHasRelatedContent.cs" />
     <Compile Include="Models\Pages\ISearchPage.cs" />
     <Compile Include="Models\Pages\LandingPage.cs" />
+    <Compile Include="Models\Pages\NereaStartPage.cs" />
     <Compile Include="Models\Pages\NewsPage.cs" />
     <Compile Include="Models\Pages\ProductPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
@@ -433,6 +435,7 @@
     <Content Include="ClientResources\Styles\LayoutIcons.css" />
     <Content Include="ClientResources\Styles\Styles.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Resources\LanguageFiles\NereaStartPage.xml" />
     <Content Include="Resources\LanguageFiles\ContentTypeNames.xml" />
     <Content Include="Resources\LanguageFiles\Display.xml" />
     <Content Include="Resources\LanguageFiles\EditorHints.xml" />
@@ -549,6 +552,8 @@
     <Content Include="Views\ContactBlock\Index.cshtml" />
     <Content Include="Views\ArticlePage\Index.cshtml" />
     <Content Include="module.config" />
+    <Content Include="Views\NereaStartPage\Index.cshtml" />
+    <Content Include="Views\Shared\Layouts\_NereaRoot.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

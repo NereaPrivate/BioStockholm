@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="English" id="en">
+    <contenttypes>
+      <NereaStartPage>
+        <name>Startsida</name>
+        <description>Startsidan</description>
+      </NereaStartPage>
+      </contenttypes>
+  </language>
+  <language name="Swedish" id="sv">
+    <contenttypes>
+      <NereaStartPage>
+        <name>Startsida</name>
+        <description>Startsidan</description>
+      </NereaStartPage>
+    </contenttypes>
+  </language>
+</languages>

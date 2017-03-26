@@ -9,15 +9,15 @@ namespace BioStockholm.Web.Business.EditorDescriptors
     /// Provides a list of options corresponding to ContactPage pages on the site
     /// </summary>
     /// <seealso cref="ContactPageSelector"/>
-    public class ContactPageSelectionFactory : ISelectionFactory
+    public class ContactPageSelectionFactory
     {
         private Injected<ContentLocator> ContentLocator { get; set; }
 
-        public IEnumerable<ISelectItem> GetSelections(ExtendedMetadata metadata)
-        {
-            var contactPages = ContentLocator.Service.GetContactPages();
+        //public IEnumerable<ISelectItem> GetSelections(ExtendedMetadata metadata)
+        //{
+        //    var contactPages = ContentLocator.Service.GetContactPages();
 
-            return new List<SelectItem>(contactPages.Select(c => new SelectItem {Value = c.PageLink, Text = c.Name}));
-        }
+        //    return new List<SelectItem>(contactPages.Select(c => new SelectItem {Value = c.PageLink, Text = c.Name}));
+        //}
     }
 }

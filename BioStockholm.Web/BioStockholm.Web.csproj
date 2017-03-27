@@ -372,6 +372,7 @@
     <Compile Include="Controllers\DefaultPageController.cs" />
     <Compile Include="Controllers\FindSearchPageController.cs" />
     <Compile Include="Controllers\ImageFileController.cs" />
+    <Compile Include="Controllers\NereaProductListPageController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\PageListBlockController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
@@ -407,6 +408,7 @@
     <Compile Include="Models\Pages\IHasRelatedContent.cs" />
     <Compile Include="Models\Pages\ISearchPage.cs" />
     <Compile Include="Models\Pages\LandingPage.cs" />
+    <Compile Include="Models\Pages\NereaProductListPage.cs" />
     <Compile Include="Models\Pages\NereaStartPage.cs" />
     <Compile Include="Models\Pages\NewsPage.cs" />
     <Compile Include="Models\Pages\ProductPage.cs" />
@@ -423,6 +425,7 @@
     <Compile Include="Models\ViewModels\ImageViewModel.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\LayoutModel.cs" />
+    <Compile Include="Models\ViewModels\NereaProductListPageViewModel.cs" />
     <Compile Include="Models\ViewModels\PageListModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Models\ViewModels\PreviewModel.cs" />
@@ -562,6 +565,7 @@
     <Content Include="Views\Shared\PagePartials\NereaHeader.cshtml" />
     <Content Include="Views\Shared\NereaFooter.cshtml" />
     <Content Include="Views\SlideShowBlock\Index.cshtml" />
+    <Content Include="Views\NereaProductListPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

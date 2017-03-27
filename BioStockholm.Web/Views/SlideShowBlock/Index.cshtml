@@ -1,0 +1,74 @@
+﻿@using EPiServer.Editor
+@model SlideShowViewModel
+
+
+@*@{
+    <span>antal bilder: @Model.Images.Count</span>
+}*@
+
+
+@{
+    // Create a unique ID for the div so you can have more than one Carousel on the page
+    var id = "carousel-" + Guid.NewGuid().ToString("N");
+    var first = true;
+}
+
+@if (Model.Images != null)
+{
+    <div id="@id" class="carousel" @Html.EditAttributes(m => m.CurrentBlock.ImageFolder)>
+        <div class="carousel-inner">
+            @foreach (var image in Model.Images)
+                {
+                <div class="item @(first ? "active" : "")">
+                    <img src="@Url.ContentUrl(image.ContentLink)" alt="@image.Name">
+                    @*@if (!Model.CurrentBlock.HideCaption)
+                    {
+                        <div class="carousel-caption">
+                            <h4>@image.Name</h4>
+                            <p>@image.Description</p>
+                        </div>
+                    }*@
+                </div>
+
+                first = false;
+            }
+        </div>
+        <a class="left carousel-control" href="#@id" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#@id" data-slide="next">›</a>
+    </div>
+}
+else if (PageEditing.PageIsInEditMode)
+{
+    <div @Html.EditAttributes(m => m.CurrentBlock.ImageFolder)>
+        <em>Select folder with images to use in slide show.</em>
+    </div>
+}
+
+
+@*<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item">
+            <img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>First Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+        <div class="item active">
+            <img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>Second Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>Third Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>*@

@@ -444,11 +444,13 @@ ul {
 	border-bottom:1px solid #BF5D8C;
 	}
 
+/*Här har jag lagt till kod*/
 .alloyMenu .navbar .nav>li.active>a {
 	background:#fff;
 	text-shadow:none !important;
-	color:#2980bd;
-	border-bottom:1px solid #2980bd;
+	color:#000000;
+	border-bottom:1px solid #e84c3c;
+    font-weight: 600;
 	}
 
 .alloyMenu .navbar .nav>li.active>a.theme1 {

@@ -1,0 +1,33 @@
+@using EPiServer.Web
+@model IPageViewModel<SitePageData>
+
+
+    <div class="header-container">
+            <div class="header-image">
+                <img src="/Static/gfx/bio stockholm logga2.png" />
+            </div>
+            <div class="header-navbar">
+                <div class="alloyMenu">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+                                <div class="nav-collapse">
+                                    <ul class="nav">
+                                        <li class="@(Model.CurrentPage.ContentLink.CompareToIgnoreWorkID(SiteDefinition.Current.StartPage) ? "active" : null)">@Html.ContentLink(SiteDefinition.Current.StartPage)</li>
+                                        @Html.MenuList(SiteDefinition.Current.StartPage,
+                                @<li class="@(item.Selected ? "active" : null)">
+                                    @Html.PageLink(item.Page, null, new { @class = string.Join(" ", item.Page.GetThemeCssClassNames()) })
+                                </li>)
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

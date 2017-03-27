@@ -1,4 +1,6 @@
-﻿using EPiServer.Core;
+﻿using System.ComponentModel.DataAnnotations;
+using EPiServer.Core;
+using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 
 namespace BioStockholm.Web.Models.Pages
@@ -19,5 +21,11 @@ namespace BioStockholm.Web.Models.Pages
                     Order = 1)]
                 public virtual XhtmlString MainBody { get; set; }
          */
+
+        [CultureSpecific]
+        [Display(
+                 GroupName = SystemTabNames.Content,
+                 Order = 1)]
+        public virtual ContentArea MainContentArea { get; set; }
     }
 }

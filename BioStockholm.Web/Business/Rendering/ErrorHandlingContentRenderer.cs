@@ -63,11 +63,11 @@ namespace BioStockholm.Web.Business.Rendering
             }
             catch (InvalidOperationException ex)
             {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
+                //if (HttpContext.Current.IsDebuggingEnabled)
+                //{
+                //    throw;
+                //}
+                ////HandlerError(helper, contentData, ex);
             }
             catch (NotImplementedException ex)
             {

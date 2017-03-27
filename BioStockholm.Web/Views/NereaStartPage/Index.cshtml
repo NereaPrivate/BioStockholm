@@ -1,3 +1,9 @@
 @model PageViewModel<NereaStartPage>
 
-<h1>NEREAS STARTSIDA</h1>
+<div class="main-carusell">
+    @Html.PropertyFor(x =>x.CurrentPage.MainContentArea)
+</div>
+
+<div class="startpage-maincontent">
+    <h1>NEREAS STARTSIDA</h1>
+</div>

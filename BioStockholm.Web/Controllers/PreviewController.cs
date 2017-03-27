@@ -40,7 +40,8 @@ namespace BioStockholm.Web.Controllers
         public ActionResult Index(IContent currentContent)
         {
             //As the layout requires a page for title etc we "borrow" the start page
-            var startPage = _contentLoader.Get<StartPage>(SiteDefinition.Current.StartPage);
+            //Ändrat här också
+            var startPage = _contentLoader.Get<NereaStartPage>(SiteDefinition.Current.StartPage);
 
             var model = new PreviewModel(startPage, currentContent);
 

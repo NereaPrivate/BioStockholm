@@ -1,0 +1,45 @@
+﻿
+.header-container {
+    max-width: 1145px;
+    display: block;
+    margin: 30px auto 30px;
+    overflow: hidden;
+    /*background-color: pink;*/
+}
+
+
+
+.header-container .header-image {
+    max-width: 200px;
+    float: left;
+    /*background-color: green;*/
+}
+
+.header-container .header-image img {
+    width: 150px !important;
+    margin-top: 30px !important;
+}
+
+.header-navbar {
+    float: left;
+    margin-top: 35px;
+    margin-left: 35px;
+}
+
+.startpage-maincontent {
+        max-width: 1145px;
+        margin:0 auto 30px;
+}
+
+/*-------slideshow------*/
+.main-carusell {
+    max-width: 1145px;
+    margin: 30px auto 30px;
+}
+
+
+/*--------- footer -------*/
+.footer-content {
+    max-width: 1145px !important;
+    margin: 0 auto !important;
+}

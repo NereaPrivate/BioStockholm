@@ -7,9 +7,12 @@ namespace BioStockholm.Web.Models.Pages
 {
     [ContentType(
         GUID = "1148a30e-b8db-446c-a82f-5aca5b7fb64f",
-         GroupName = Global.GroupNames.Specialized
-    )]
+         GroupName = Global.GroupNames.Specialized)]
     [SiteImageUrl]
+    [AvailableContentTypes(
+        Availability.Specific,
+        Include = new[] { typeof(NereaProductListPage)/*, typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage), typeof(ContentFolder)*/ })]// Pages we can create under the start page...
+        //ExcludeOn = new[] { typeof(ContainerPage), typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage) })]
     public class NereaStartPage : SitePageData
     {
         /*

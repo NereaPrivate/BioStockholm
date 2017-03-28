@@ -26,6 +26,10 @@
     margin-left: 35px;
 }
 
+.navbar .nav > li {
+    margin-right: 20px;
+}
+
 .startpage-maincontent {
         max-width: 1145px;
         margin:0 auto 30px;
@@ -42,4 +46,23 @@
 .footer-content {
     max-width: 1145px !important;
     margin: 0 auto !important;
+}
+
+
+/*--------ProductListPage-------*/
+.productListPage-heading {
+    max-width: 1145px;
+    display: block;
+    margin: 30px auto 30px;
+    text-align: center;
+    /*overflow: hidden;*/
+}
+
+
+/*------ProductPage------*/
+
+.productpage-container {
+     max-width: 1145px;
+    display: block;
+    margin: 0 auto;
 }

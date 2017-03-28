@@ -14,7 +14,12 @@ namespace BioStockholm.Web.Controllers
     {
         public ActionResult Index(NereaProductListPage currentPage)
         {
-            var model = new NereaProductListPageViewModel();
+            //var model = new NereaProductListPageViewModel(currentPage)
+            //{
+            //    Heading = currentPage.PageHeading,
+            //    Preamble = currentPage.PagePreamble
+            //};
+            var model = PageViewModel.Create(currentPage);
 
             return View(model);
         }

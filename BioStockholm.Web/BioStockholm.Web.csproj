@@ -373,6 +373,7 @@
     <Compile Include="Controllers\FindSearchPageController.cs" />
     <Compile Include="Controllers\ImageFileController.cs" />
     <Compile Include="Controllers\NereaProductListPageController.cs" />
+    <Compile Include="Controllers\NereaProductPageController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\PageListBlockController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
@@ -409,6 +410,7 @@
     <Compile Include="Models\Pages\ISearchPage.cs" />
     <Compile Include="Models\Pages\LandingPage.cs" />
     <Compile Include="Models\Pages\NereaProductListPage.cs" />
+    <Compile Include="Models\Pages\NereaProductPage.cs" />
     <Compile Include="Models\Pages\NereaStartPage.cs" />
     <Compile Include="Models\Pages\NewsPage.cs" />
     <Compile Include="Models\Pages\ProductPage.cs" />
@@ -426,6 +428,7 @@
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\LayoutModel.cs" />
     <Compile Include="Models\ViewModels\NereaProductListPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\NereaProductPageViewModel.cs" />
     <Compile Include="Models\ViewModels\PageListModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Models\ViewModels\PreviewModel.cs" />
@@ -441,6 +444,7 @@
     <Content Include="ClientResources\Styles\LayoutIcons.css" />
     <Content Include="ClientResources\Styles\Styles.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Resources\LanguageFiles\NereaProductListPage.xml" />
     <Content Include="Resources\LanguageFiles\NereaStartPage.xml" />
     <Content Include="Resources\LanguageFiles\ContentTypeNames.xml" />
     <Content Include="Resources\LanguageFiles\Display.xml" />
@@ -566,6 +570,7 @@
     <Content Include="Views\Shared\NereaFooter.cshtml" />
     <Content Include="Views\SlideShowBlock\Index.cshtml" />
     <Content Include="Views\NereaProductListPage\Index.cshtml" />
+    <Content Include="Views\NereaProductPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

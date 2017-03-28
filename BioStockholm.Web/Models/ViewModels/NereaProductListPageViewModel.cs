@@ -17,10 +17,6 @@ namespace BioStockholm.Web.Models.ViewModels
             Heading = currentPage.PageHeading;
             Preamble = currentPage.PagePreamble;
         }
-
-        public NereaProductListPageViewModel()
-        {
-        }
     }
        
     }

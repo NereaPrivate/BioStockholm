@@ -228,4 +228,23 @@
       </videofile>
     </contenttypes>
   </language>
+  <language name="Swedish" id="sv">
+    <contenttypes>
+      <icontentdata>
+        <properties>
+          <teasertext>
+            <caption>Teaser Text</caption>
+            <help>Kan användas för att visa en annan text än den beskrivande text när sidan droppas i en ContentArea</help>
+          </teasertext>
+          <pageimage>
+            <caption>Teaser Bild</caption>
+            <help>En bild som används i olika sammanhang, till exempel när sidan droppas i en ContentArea</help>
+          </pageimage>
+          <maincontentarea>
+            <caption>Stor Content area</caption>
+          </maincontentarea>
+        </properties>
+      </icontentdata>
+    </contenttypes>
+  </language>
 </languages>

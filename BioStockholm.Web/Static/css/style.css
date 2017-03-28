@@ -416,11 +416,13 @@ ul {
 	outline:none;
 	}
 
+/*ändrat kod här*/
 .alloyMenu .navbar .nav>li>a:hover {
 	background:#fff;
 	text-shadow:none !important;
-	color:#2980bd;
-	border-bottom:1px solid #2980bd;
+	color:#000000;
+	border-bottom:1px solid #000000;
+    font-weight: 600;
 	}
 
 .alloyMenu .navbar .nav>li>a.theme1:hover {

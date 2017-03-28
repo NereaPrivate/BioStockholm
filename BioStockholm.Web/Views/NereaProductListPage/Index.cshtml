@@ -1,6 +1,7 @@
-﻿
-@model BioStockholm.Web.Models.ViewModels.NereaProductListPageViewModel
+﻿@using BioStockholm.Web.Models.Pages
+@model PageViewModel<NereaProductListPage>
 
-
-<h1 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h1>
-<p class="introduction" @Html.EditAttributes(x => x.Preamble)>@Model.Preamble</p>
+<div class="productListPage-heading">
+    <h1 @Html.EditAttributes(x => x.CurrentPage.PageHeading)>@Model.CurrentPage.PageHeading</h1>
+    <p class="introduction" @Html.EditAttributes(x => x.CurrentPage.PagePreamble)>@Model.CurrentPage.PagePreamble</p>
+</div>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="English" id="en">
+    <contenttypes>
+      <NereaProductListPage>
+        <properties>
+          <PageHeading>
+            <caption>Heading</caption>
+            <help>Heading for the page</help>
+          </PageHeading>
+          <PagePreamble>
+            <caption>Preamble</caption>
+            <help>Preamble for the page</help>
+          </PagePreamble>
+        </properties>
+      </NereaProductListPage>
+    </contenttypes>
+  </language>
+  <language name="Swedish" id="sv">
+    <contenttypes>
+      <NereaProductListPage>
+        <properties>
+          <PageHeading>
+            <caption>Rubrik</caption>
+            <help>Rubrik för sidan</help>
+          </PageHeading>
+          <PagePreamble>
+            <caption>Ingress</caption>
+            <help>Ingress för sidan</help>
+          </PagePreamble>
+        </properties>
+      </NereaProductListPage>
+    </contenttypes>
+  </language>
+</languages>

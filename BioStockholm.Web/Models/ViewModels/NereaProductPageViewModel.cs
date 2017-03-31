@@ -3,8 +3,12 @@ using EPiServer.Core;
 
 namespace BioStockholm.Web.Models.ViewModels
 {
-    public class NereaProductPageViewModel
+    public class NereaProductPageViewModel : PageViewModel<NereaProductPage>
     {
+        public NereaProductPageViewModel(NereaProductPage currentPage) : base(currentPage)
+        {
+        }
+
         public string TrailerUrl { get; set; }
         public string TrailerImageUrl { get; set; }
         public ContentReference Image { get; set; }
@@ -16,6 +20,7 @@ namespace BioStockholm.Web.Models.ViewModels
         public string AgeLimit { get; set; }
         public string OriginalLanguage { get; set; }
         public string Director { get; set; }
+        public string YouTubeUrl { get; set; }
 
         //public NereaProductPageViewModel(NereaProductPage currentPage)
         //{

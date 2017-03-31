@@ -12,16 +12,29 @@ namespace BioStockholm.Web.Controllers
 {
     public class NereaProductListPageController : PageController<NereaProductListPage>
     {
+        private readonly IContentRepository _contentRepository;
+
+        public NereaProductListPageController(IContentRepository contentRepository)
+        {
+            _contentRepository = contentRepository;
+        }
+
         public ActionResult Index(NereaProductListPage currentPage)
         {
-            //var model = new NereaProductListPageViewModel(currentPage)
-            //{
-            //    Heading = currentPage.PageHeading,
-            //    Preamble = currentPage.PagePreamble
-            //};
-            var model = PageViewModel.Create(currentPage);
+            var model = new NereaProductListPageViewModel(currentPage)
+            {
+                //Heading = currentPage.PageHeading,
+                //Preamble = currentPage.PagePreamble
 
+                Products = GetProducts(currentPage)
+            };
+            
             return View(model);
+        }
+
+        private IEnumerable<NereaProductPage> GetProducts(NereaProductListPage currentPage)
+        {
+            return _contentRepository.GetChildren<NereaProductPage>(currentPage.ContentLink).ToList();
         }
     }
 }

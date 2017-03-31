@@ -1,7 +1,7 @@
-﻿@using BioStockholm.Web.Models.Pages
-@using EPiServer.Framework.Web.Resources
-@*@model BioStockholm.Web.Models.ViewModels.NereaProductPageViewModel*@
-@model PageViewModel<NereaProductPage>
+﻿@model NereaProductPageViewModel
+
+<iframe width="560" height="315" src="@Model.YouTubeUrl" frameborder="0" allowfullscreen></iframe>
+
 
 @*<div class="productpage-container">
     <div class="productpage-video">
@@ -11,7 +11,7 @@
 
 
 
-@{
+@*@{
     ClientResources.RequireScript(Href("~/static/jwplayer/jwplayer.js"));
 
     //The video element's ID needs to be unique in order for several video blocks and possible the same video block, to work on the same page
@@ -38,4 +38,8 @@
         jwplayer('@containerId').play();
         jwplayer('@containerId').pause();
     </script>
+</div>*@
+
+<div>
+    @Html.PropertyFor(x => x.CurrentPage.Heading)
 </div>

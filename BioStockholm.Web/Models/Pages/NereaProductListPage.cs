@@ -9,20 +9,26 @@ using EPiServer.Web;
 
 namespace BioStockholm.Web.Models.Pages
 {
-    [ContentType(DisplayName = "NereaProductListPage", GUID = "d2954341-ee43-47b6-bc1c-4f9dfacbf418", Description = "För att se en sida som listar alla filmer")]
+    [ContentType(
+        GUID = "d2954341-ee43-47b6-bc1c-4f9dfacbf418"
+    )]
     [SuppressMessage("ReSharper", "Mvc.TemplateNotResolved")]
+    [AvailableContentTypes(
+        Availability.Specific,
+        Include = new[] { typeof(NereaProductPage) }
+    )]
     public class NereaProductListPage : SitePageData
     {
 
         [CultureSpecific]
         [Display(
-         GroupName = SystemTabNames.Content,
+         GroupName = Global.TabNames.Content,
          Order = 1)]
         public virtual string PageHeading { get; set; }
 
         [CultureSpecific]
         [Display(
-            GroupName = SystemTabNames.Content,
+            GroupName = Global.TabNames.Content,
             Order = 10)]
         [UIHint(UIHint.Textarea)]
         [StringLength(300)]

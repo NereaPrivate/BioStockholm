@@ -19,6 +19,8 @@
   <language name="Swedish" id="sv">
     <contenttypes>
       <NereaProductListPage>
+        <name>Lista filmer</name>
+        <description>För att se en sida som listar alla filmer</description>
         <properties>
           <PageHeading>
             <caption>Rubrik</caption>

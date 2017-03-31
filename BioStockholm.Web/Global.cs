@@ -38,6 +38,13 @@ namespace BioStockholm.Web
             public const string Specialized = "Specialized";
         }
 
+        [GroupDefinitions]
+        public static class TabNames
+        {
+            [Display(Name = "Innehåll", Order = 1)]
+            public const string Content = "Innehåll";
+        }
+
         /// <summary>
         /// Tags to use for the main widths used in the Bootstrap HTML framework
         /// </summary>

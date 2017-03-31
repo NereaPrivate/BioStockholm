@@ -1,30 +1,42 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using BioStockholm.Web.Models.Pages;
 using BioStockholm.Web.Models.ViewModels;
-using EPiServer.Web;
-using EPiServer.Web.Mvc;
+using EPiServer;
 
 namespace BioStockholm.Web.Controllers
 {
     public class NereaStartPageController : PageControllerBase<NereaStartPage>
     {
+        private readonly IContentRepository _contentRepository;
+
+        public NereaStartPageController(IContentRepository contentRepository)
+        {
+            _contentRepository = contentRepository;
+        }
+
         public ActionResult Index(NereaStartPage currentPage)
         {
-            var model = PageViewModel.Create(currentPage);
-
-            //if (SiteDefinition.Current.StartPage.CompareToIgnoreWorkID(currentPage.ContentLink)) // Check if it is the StartPage or just a page of the StartPage type.
-            //{
-            //    //Connect the view models logotype property to the start page's to make it editable
-            //    var editHints = ViewData.GetEditHints<PageViewModel<NereaStartPage>, NereaStartPage>();
-            //    editHints.AddConnection(m => m.Layout.Logotype, p => p.SiteLogotype);
-            //    editHints.AddConnection(m => m.Layout.ProductPages, p => p.ProductPageLinks);
-            //    editHints.AddConnection(m => m.Layout.CompanyInformationPages, p => p.CompanyInformationPageLinks);
-            //    editHints.AddConnection(m => m.Layout.NewsPages, p => p.NewsPageLinks);
-            //    editHints.AddConnection(m => m.Layout.CustomerZonePages, p => p.CustomerZonePageLinks);
-            //}
+            var model = new NereaStartPageViewModel(currentPage)
+            {
+                Products = GetProducts(currentPage)
+            };
 
             return View(model);
         }
 
+        public IEnumerable<NereaProductPage> GetProducts(NereaStartPage currentPage)
+        {
+            var products = new List<NereaProductPage>();
+
+            if (currentPage.ProductPage != null)
+            {
+                var listPage = _contentRepository.Get<NereaProductListPage>(currentPage.ProductPage);
+                products = _contentRepository.GetChildren<NereaProductPage>(listPage.ContentLink).ToList();
+            }
+
+            return products;
+        }
     }
 }

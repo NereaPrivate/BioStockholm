@@ -51,30 +51,30 @@ namespace BioStockholm.Web.Models.Pages
         [CultureSpecific]
         public virtual bool DisableIndexing { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 100)]
-        [UIHint(UIHint.Image)]
-        public virtual ContentReference PageImage { get; set; }
+        //[Display(
+        //    GroupName = SystemTabNames.Content,
+        //    Order = 100)]
+        //[UIHint(UIHint.Image)]
+        //public virtual ContentReference PageImage { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 200)]
-        [CultureSpecific]
-        [UIHint(UIHint.Textarea)]
-        public virtual string TeaserText
-        {
-            get
-            {
-                var teaserText = this.GetPropertyValue(p => p.TeaserText);
+        //[Display(
+        //    GroupName = SystemTabNames.Content,
+        //    Order = 200)]
+        //[CultureSpecific]
+        //[UIHint(UIHint.Textarea)]
+        //public virtual string TeaserText
+        //{
+        //    get
+        //    {
+        //        var teaserText = this.GetPropertyValue(p => p.TeaserText);
 
-                // Use explicitly set teaser text, otherwise fall back to description
-                return !string.IsNullOrWhiteSpace(teaserText)
-                       ? teaserText
-                       : MetaDescription;
-            }
-            set { this.SetPropertyValue(p => p.TeaserText, value); }
-        }
+        //        // Use explicitly set teaser text, otherwise fall back to description
+        //        return !string.IsNullOrWhiteSpace(teaserText)
+        //               ? teaserText
+        //               : MetaDescription;
+        //    }
+        //    set { this.SetPropertyValue(p => p.TeaserText, value); }
+        //}
 
         [Display(
             GroupName = SystemTabNames.Settings,

@@ -2,7 +2,11 @@
 
 @model NereaProductListPageViewModel
 
-<div>
+<div class="productpage-container">
+    <div>
+        <h1>@Html.PropertyFor(x =>x.CurrentPage.PageHeading)</h1>
+        <p>@Html.PropertyFor(x => x.CurrentPage.PagePreamble)</p>
+    </div>
     <ul>
         @foreach (var product in Model.Products)
         {

@@ -22,13 +22,13 @@ namespace BioStockholm.Web.Models.Pages
 
         [CultureSpecific]
         [Display(
-         GroupName = Global.TabNames.Content,
+         GroupName = SystemTabNames.Content,
          Order = 1)]
         public virtual string PageHeading { get; set; }
 
         [CultureSpecific]
         [Display(
-            GroupName = Global.TabNames.Content,
+            GroupName = SystemTabNames.Content,
             Order = 10)]
         [UIHint(UIHint.Textarea)]
         [StringLength(300)]

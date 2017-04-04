@@ -1,6 +1,7 @@
 using EPiServer.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using EPiServer.DataAbstraction;
 
 namespace BioStockholm.Web
 {
@@ -16,6 +17,9 @@ namespace BioStockholm.Web
         [GroupDefinitions()]
         public static class GroupNames
         {
+            [Display(Order = 0)]
+            public const string Content = SystemTabNames.Content;
+
             [Display(Name = "Contact", Order = 1)]
             public const string Contact = "Contact";
 
@@ -38,12 +42,12 @@ namespace BioStockholm.Web
             public const string Specialized = "Specialized";
         }
 
-        [GroupDefinitions]
-        public static class TabNames
-        {
-            [Display(Name = "Innehåll", Order = 1)]
-            public const string Content = "Innehåll";
-        }
+        //[GroupDefinitions]
+        //public static class TabNames
+        //{
+        //    [Display(Name = "Innehåll", Order = 1)]
+        //    public const string Content = "Innehåll";
+        //}
 
         /// <summary>
         /// Tags to use for the main widths used in the Bootstrap HTML framework

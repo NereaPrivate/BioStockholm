@@ -1,7 +1,5 @@
 ﻿@model NereaProductPageViewModel
 
-<iframe width="560" height="315" src="@Model.YouTubeUrl" frameborder="0" allowfullscreen></iframe>
-
 
 @*<div class="productpage-container">
     <div class="productpage-video">
@@ -39,7 +37,11 @@
         jwplayer('@containerId').pause();
     </script>
 </div>*@
-
-<div>
-    @Html.PropertyFor(x => x.CurrentPage.Heading)
+<div class="productpage-container">
+    <div class="productpage-video">
+        <iframe width="560" height="315" src="@Model.YouTubeUrl" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="productpage-heading">
+        @Html.PropertyFor(x => x.CurrentPage.Heading)
+    </div>
 </div>

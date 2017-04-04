@@ -20,11 +20,11 @@ namespace BioStockholm.Web.Models.Pages
             Order = 10)]
         public virtual string TrailerUrl { get; set; }
 
-        [CultureSpecific]
-        [Display(
-           GroupName = SystemTabNames.Content,
-           Order = 12)]
-        public virtual string TrailerImageUrl { get; set; }
+        //[CultureSpecific]
+        //[Display(
+        //   GroupName = SystemTabNames.Content,
+        //   Order = 12)]
+        //public virtual string TrailerImageUrl { get; set; }
 
         [CultureSpecific]
         [Display(

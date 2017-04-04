@@ -33,7 +33,7 @@ namespace BioStockholm.Web.Controllers
             if (currentPage.ProductPage != null)
             {
                 var listPage = _contentRepository.Get<NereaProductListPage>(currentPage.ProductPage);
-                products = _contentRepository.GetChildren<NereaProductPage>(listPage.ContentLink).ToList();
+                products = _contentRepository.GetChildren<NereaProductPage>(listPage.ContentLink).Take(9).ToList();
             }
 
             return products;

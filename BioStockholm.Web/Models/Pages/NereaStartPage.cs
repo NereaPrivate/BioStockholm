@@ -11,13 +11,8 @@ namespace BioStockholm.Web.Models.Pages
     [SiteImageUrl]
     [AvailableContentTypes(
          Availability.Specific,
-         Include =
-             new[]
-             {
-                 typeof(NereaProductListPage)
-                 /*, typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage), typeof(ContentFolder)*/
-             })] // Pages we can create under the start page...
-    //ExcludeOn = new[] { typeof(ContainerPage), typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage) })]
+         Include = new[]{typeof(NereaProductListPage)/*, typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage), typeof(ContentFolder)*/})] // Pages we can create under the start page...
+        //ExcludeOn = new[] { typeof(ContainerPage), typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage) })]
     public class NereaStartPage : SitePageData
     {
         [CultureSpecific]

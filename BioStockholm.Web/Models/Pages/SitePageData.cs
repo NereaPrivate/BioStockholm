@@ -13,6 +13,9 @@ namespace BioStockholm.Web.Models.Pages
     /// </summary>
     public abstract class SitePageData : PageData, ICustomCssInContentArea
     {
+        [ScaffoldColumn(false)]
+        public virtual CategoryList Category { get; set; }
+
         [Display(
             GroupName = Global.GroupNames.MetaData,
             Order = 100)]

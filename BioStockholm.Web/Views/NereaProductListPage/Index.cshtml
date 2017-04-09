@@ -2,20 +2,25 @@
 
 @model NereaProductListPageViewModel
 
-<div class="productpage-container">
-    <div>
+<div class="productlistpage-container">
+    <div class="productlistpage-header">
         <h1>@Html.PropertyFor(x =>x.CurrentPage.PageHeading)</h1>
         <p>@Html.PropertyFor(x => x.CurrentPage.PagePreamble)</p>
     </div>
-    <ul>
-        @foreach (var product in Model.Products)
-        {
-            <li>
-                @*hämta bilden*@
-                <a href="@product.ContentLink.Url()">@product.Name</a>
-            </li>
-        }
-    </ul>
+    <div class="productlistpage-content">
+        <ul>
+            @foreach (var product in Model.Products)
+            {
+                <li>
+                    @*hämta bilden*@
+                    <a href="@product.ContentLink.Url()">
+                        <img src="@Url.ContentUrl(product.Image)" />
+                        <h5>@product.Name</h5>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
 
 @*<div class="productListPage-heading">

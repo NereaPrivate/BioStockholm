@@ -1,47 +1,87 @@
 ﻿@model NereaProductPageViewModel
 
+@{
 
-@*<div class="productpage-container">
-    <div class="productpage-video">
-        @Html.PropertyFor(x => x.CurrentPage.TrailerUrl)
-    </div>
-</div>*@
-
-
-
-@*@{
-    ClientResources.RequireScript(Href("~/static/jwplayer/jwplayer.js"));
-
-    //The video element's ID needs to be unique in order for several video blocks and possible the same video block, to work on the same page
-    var containerId = "video-container-" + Guid.NewGuid().GetHashCode();
 }
-@Html.FullRefreshPropertiesMetaData(new[] { "Url" })
-<div class="embed" id="embed" runat="server" @Html.EditAttributes(m => m.CurrentPage.TrailerUrl)>
-    <div style="position:absolute; width: 100%; height: 100%">
-        <div id="@containerId"></div>
-    </div>
 
-    <script type="text/javascript">
-        jwplayer('@containerId').setup({
-            'file': @Html.Raw(Json.Encode(Model.CurrentPage.TrailerUrl)),
-            'image': @Html.Raw(Json.Encode(Model.CurrentPage.TrailerImageUrl)),
-            'type': 'video',
-            'width': '100%',
-            'height': '100%',
-            'modes': [
-                { type: 'html5' },
-                { type: 'flash', src: "/Static/jwplayer/player.swf" }
-            ]
-        });
-        jwplayer('@containerId').play();
-        jwplayer('@containerId').pause();
-    </script>
-</div>*@
 <div class="productpage-container">
     <div class="productpage-video">
-        <iframe width="560" height="315" src="@Model.YouTubeUrl" frameborder="0" allowfullscreen></iframe>
+        <div class="productpage-video__youtube">
+            <iframe @*width="560" height="315"*@ src="@Model.TrailerUrl" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="productpage-video__info">
+            <h1>
+                @Html.PropertyFor(x => x.CurrentPage.Heading)
+            </h1>
+            <p class="productlistpage-text__p">@Html.PropertyFor(x => x.CurrentPage.Genre), @Html.PropertyFor(x => x.CurrentPage.AgeLimit)</p>
+            <hr />
+            <p>Premiär: @Html.PropertyFor(x => x.CurrentPage.Premiere)</p>
+            <hr />
+            <p>Speltid: @Html.PropertyFor(x => x.CurrentPage.DurationTime)</p>
+            <hr />
+            <p>Regissör: @Html.PropertyFor(x => x.Director)</p>
+            <hr />
+            <p>Orginal språk: @Html.PropertyFor(x => x.OriginalLanguage)</p>
+            <hr />
+            <p>Skådespelare:</p>
+            <hr />
+            <p>Pris: @Model.CurrentPage.Price kr</p>
+        </div>
     </div>
     <div class="productpage-heading">
-        @Html.PropertyFor(x => x.CurrentPage.Heading)
+        <div class="productpage-image">
+            @Html.PropertyFor(x => x.CurrentPage.Image)
+            <div class="productpage-button__reserv">
+                <input type="submit" value=@Model.CurrentPage.ButtonReserv />
+            </div>
+            <div class="productpage-button__buy">
+                <input type="submit" value=@Model.CurrentPage.ButtonBuy />
+            </div>
+        </div>
+        <div class="productpage-text">
+            <h1>
+                @Html.PropertyFor(x => x.CurrentPage.Heading)
+            </h1>
+            <span>
+                <img src="~/Static/gfx/movie-icon.png" />
+                <p>@Html.PropertyFor(x => x.CurrentPage.Genre)</p>
+                <img src="~/Static/gfx/timeIcon.png" />
+                <p>@Html.PropertyFor(x => x.CurrentPage.DurationTime)</p>
+            </span>
+            <div class="productpage-text__innertext">
+                <p>
+                    @Html.PropertyFor(x => x.CurrentPage.Text)
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="productpage-getday">
+        <select>
+            @foreach (var day in Model.CurrentWeek)
+            {
+                <option value="">@day.ToString("dddd dd/MM").Replace("-", "/")</option>
+            }
+        </select>
+    </div>
+    <div class="productpage-gettickets">
+        <table>
+            <tr class="productpage-gettickets__header">
+                <th class="productpage-gettickets__header-text">Tid</th>
+                <th>Platser kvar</th>
+                <th></th>
+            </tr>
+
+            @foreach (var movie in Model.TimeSeats)
+            {
+                <tr>
+                    <td>@movie.Time</td>
+                    <td style="text-align: center">25</td>
+                    <td>@Model.CurrentPage.ButtonReserv</td>
+                </tr>
+
+            }
+        </table>
     </div>
 </div>

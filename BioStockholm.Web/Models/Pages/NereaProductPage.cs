@@ -13,6 +13,23 @@ namespace BioStockholm.Web.Models.Pages
     [SuppressMessage("ReSharper", "Mvc.TemplateNotResolved")]
     public class NereaProductPage : SitePageData
     {
+        [CultureSpecific]
+        [Display(
+            GroupName = Global.TabNames.Shows,
+            Order = 10)]
+        public virtual CategoryList Show1 { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = Global.TabNames.Shows,
+            Order = 20)]
+        public virtual CategoryList Show2 { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 6)]
+        public virtual CategoryList Genre { get; set; }
 
         [CultureSpecific]
         [Display(
@@ -39,11 +56,11 @@ namespace BioStockholm.Web.Models.Pages
            Order = 20)]
         public virtual string Heading { get; set; }
 
-        [CultureSpecific]
-        [Display(
-         GroupName = SystemTabNames.Content,
-         Order = 25)]
-        public virtual string Genre { get; set; }
+        //[CultureSpecific]
+        //[Display(
+        // GroupName = SystemTabNames.Content,
+        // Order = 25)]
+        //public virtual string Genre { get; set; }
 
         [CultureSpecific]
         [Display(
@@ -55,14 +72,13 @@ namespace BioStockholm.Web.Models.Pages
         [Display(
          GroupName = SystemTabNames.Content,
          Order = 35)]
-        [UIHint(UIHint.Textarea)]
-        public virtual string Text { get; set; }
+        public virtual XhtmlString Text { get; set; }
 
         [CultureSpecific]
         [Display(
         GroupName = SystemTabNames.Content,
         Order = 40)]
-        public virtual string Premiere { get; set; }
+        public virtual DateTime Premiere { get; set; }
 
         [CultureSpecific]
         [Display(
@@ -81,6 +97,24 @@ namespace BioStockholm.Web.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 55)]
         public virtual string Director { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 60)]
+        public virtual string ButtonReserv { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 65)]
+        public virtual string ButtonBuy { get; set; }
+
+        [CultureSpecific]
+        [Display(
+           GroupName = SystemTabNames.Content,
+           Order = 70)]
+        public virtual int Price { get; set; }
 
 
         public override void SetDefaultValues(ContentType contentType)

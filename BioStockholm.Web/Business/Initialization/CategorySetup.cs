@@ -33,13 +33,16 @@ namespace BioStockholm.Web.Business.Initialization
 
             //radera om kategorin finns
             if (categoryRepository.Get("Salong") == null)
-            {               
+            {
+                //var salongen = categoryRepository.Get("Salong");
+                //categoryRepository.Delete(salongen);
+
                 //skapa kategorin
                 categoryRepository.Save(salongCategory);
 
                 var parentGenre = categoryRepository.Get("Salong");
 
-                for (var i = 1; i < 4; i++)
+                for (var i = 1; i < 6; i++)
                 {
                     var salong = new Category(parentGenre, "Salong " + i)
                     {
@@ -86,9 +89,9 @@ namespace BioStockholm.Web.Business.Initialization
                     Description = "Thriller"
                 };
 
-                var genre3 = new Category(parentGenre, "Barn och familj")
+                var genre3 = new Category(parentGenre, "Familj")
                 {
-                    Description = "Barn och familj"
+                    Description = "Familj"
                 };
 
                 var genre4 = new Category(parentGenre, "Skräck")
@@ -122,6 +125,26 @@ namespace BioStockholm.Web.Business.Initialization
                     Description = "Äventyr"
                 };
 
+                var genre10 = new Category(parentGenre, "Sci-Fi")
+                {
+                    Description = "Sci-Fi"
+                };
+
+                var genre11 = new Category(parentGenre, "Animerat")
+                {
+                    Description = "Animerat"
+                };
+
+                var genre12 = new Category(parentGenre, "Musik")
+                {
+                    Description = "Musik"
+                };
+
+                var genre13 = new Category(parentGenre, "Science-Fiction")
+                {
+                    Description = "Science-Fiction"
+                };
+
                 categoryRepository.Save(genre1);
                 categoryRepository.Save(genre2);
                 categoryRepository.Save(genre3);
@@ -131,6 +154,10 @@ namespace BioStockholm.Web.Business.Initialization
                 categoryRepository.Save(genre7);
                 categoryRepository.Save(genre8);
                 categoryRepository.Save(genre9);
+                categoryRepository.Save(genre10);
+                categoryRepository.Save(genre11);
+                categoryRepository.Save(genre12);
+                categoryRepository.Save(genre13);
             }
         }
 

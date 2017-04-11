@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using BioStockholm.Web.Models;
 using BioStockholm.Web.Models.Pages;
 using BioStockholm.Web.Models.ViewModels;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.ServiceLocation;
 
@@ -30,14 +31,75 @@ namespace BioStockholm.Web.Controllers
             var timeSeats = new List<TimeSeats>();
             var categoryRepository = ServiceLocator.Current.GetInstance<CategoryRepository>();
 
-            foreach (var timeId in currentPage.Show1)
+            if (currentPage.Show1 != null)
             {
-                var category = categoryRepository.Get(timeId);
-                var categoryName = category.Description;
+                foreach (var timeSeatId in currentPage.Show1)
+                {
+                    var category = categoryRepository.Get(timeSeatId);
+                    var theaterName = category.Description;
+
+                    var timeSeat = new TimeSeats
+                    {
+                        Time = theaterName
+                    };
+
+                    timeSeats.Add(timeSeat);
+                }
+            }
+
+            if (currentPage.Show2 != null)
+            {
+                foreach (var timeSeatId in currentPage.Show2)
+                {
+                    var category = categoryRepository.Get(timeSeatId);
+                    var theaterName = category.Description;
+
+                    var timeSeat = new TimeSeats
+                    {
+                        Time = theaterName
+                    };
+
+                    timeSeats.Add(timeSeat);
+                }
+            }
+
+            if (currentPage.Show3 != null)
+            {
+                foreach (var timeSeatId in currentPage.Show3)
+                {
+                    var category = categoryRepository.Get(timeSeatId);
+                    var theaterName = category.Description;
+
+                    var timeSeat = new TimeSeats
+                    {
+                        Time = theaterName
+                    };
+
+                    timeSeats.Add(timeSeat);
+                }
+            }
+
+            if (currentPage.Show4 != null)
+            {
+                var showTimeSeats = GetTimeSeatsForShow(currentPage.Show4, categoryRepository);
+
+                timeSeats.AddRange(showTimeSeats);
+            }
+
+            return timeSeats;
+        }
+
+        private static List<TimeSeats> GetTimeSeatsForShow(CategoryList show, CategoryRepository categoryRepository)
+        {
+            var timeSeats = new List<TimeSeats>();
+            foreach (var timeSeatId in show)
+            {
+                var category = categoryRepository.Get(timeSeatId);
+                var theaterName = category.Description;
 
                 var timeSeat = new TimeSeats
                 {
-                    Time = categoryName
+                    Time = theaterName
                 };
 
                 timeSeats.Add(timeSeat);

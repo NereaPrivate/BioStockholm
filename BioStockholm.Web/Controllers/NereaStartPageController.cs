@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI.WebControls.Expressions;
 using BioStockholm.Web.Models.Pages;
 using BioStockholm.Web.Models.ViewModels;
 using EPiServer;
+using StructureMap.TypeRules;
 
 namespace BioStockholm.Web.Controllers
 {
@@ -32,8 +34,12 @@ namespace BioStockholm.Web.Controllers
 
             if (currentPage.ProductPage != null)
             {
+                
                 var listPage = _contentRepository.Get<NereaProductListPage>(currentPage.ProductPage);
-                products = _contentRepository.GetChildren<NereaProductPage>(listPage.ContentLink).Take(9).ToList();
+                products =
+                    _contentRepository.GetChildren<NereaProductPage>(listPage.ContentLink)
+                        .OrderByDescending(x => x.Premiere).Take(10).ToList();
+
             }
 
             return products;

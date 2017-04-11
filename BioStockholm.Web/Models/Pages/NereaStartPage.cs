@@ -27,6 +27,12 @@ namespace BioStockholm.Web.Models.Pages
              Order = 10)]
         public virtual ContentReference ProductPage { get; set; }
 
+        [CultureSpecific]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 20)]
+        public virtual string Header { get; set; }
+
         public override void SetDefaultValues(ContentType contentType)
         {
             base.SetDefaultValues(contentType);

@@ -34,7 +34,7 @@ namespace BioStockholm.Web.Controllers
 
         private IEnumerable<NereaProductPage> GetProducts(NereaProductListPage currentPage)
         {
-            return _contentRepository.GetChildren<NereaProductPage>(currentPage.ContentLink).ToList();
+            return _contentRepository.GetChildren<NereaProductPage>(currentPage.ContentLink).OrderBy(x => x.Heading).ToList();
         }
     }
 }

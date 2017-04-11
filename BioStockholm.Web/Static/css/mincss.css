@@ -7,7 +7,11 @@
     /*background-color: pink;*/
 }
 
-
+.startpage-header {
+     max-width: 1145px;
+    text-align: center;
+      margin:0 auto 30px;
+}
 
 .header-container .header-image {
     max-width: 200px;
@@ -33,6 +37,39 @@
 .startpage-maincontent {
         max-width: 1145px;
         margin:0 auto 30px;
+}
+
+/*.productlistpage-content {
+    margin-top: 60px;
+}*/
+
+.startpage-maincontent ul {
+    list-style: none;
+    display: block;
+    margin: 0 0 9px 0px;
+}
+
+.startpage-maincontent ul li {
+    display: inline-block;
+    margin-right: 104px;
+}
+
+.startpage-maincontent ul li:nth-child(5n) {
+    display: inline-block;
+    margin: 0;
+}
+
+.startpage-maincontent img {
+    max-width: 100%;
+    width: 142px;
+    height: 200px;
+    vertical-align: middle;
+    border: 0;
+}
+.startpage-maincontent ul li h5 {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 /*-------slideshow------*/
@@ -86,7 +123,12 @@
 
 .productlistpage-content ul li {
     display: inline-block;
-    margin-right: 70px;
+    margin-right: 104px;
+}
+
+.productlistpage-content ul li:nth-child(5n) {
+    display: inline-block;
+    margin: 0;
 }
 
 .productlistpage-content img {
@@ -100,7 +142,7 @@
 .productlistpage-content ul li h5 {
     margin-top: 15px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 
@@ -210,11 +252,18 @@
     /*font-weight: 600;*/
 }
 
+.productpage-video__info p span {
+    font-size: 16px;
+    margin-left: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
 .productpage-video__info .productlistpage-text__p{
     font-size: 18px;
     margin-left: 20px;
     font-style: italic;
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 }
 
 .productpage-video__info hr {
@@ -224,5 +273,21 @@
 }
 
 .productpage-container .productpage-gettickets__header {
-     border-bottom: 1px solid #000;
+     border-bottom: 2px solid #b3b3b3;
+     max-width: 1145px;
+}
+
+.productpage-getday select {
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.productpage-gettickets {
+    margin-top: 20px;
+}
+
+.productpage-container .productpage-gettickets__header th {
+    margin-right: 30px;
+    padding-right: 50px;
+    padding-bottom: 10px;
 }

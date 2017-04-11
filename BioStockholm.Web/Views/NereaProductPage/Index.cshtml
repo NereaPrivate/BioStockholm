@@ -15,15 +15,15 @@
             </h1>
             <p class="productlistpage-text__p">@Html.PropertyFor(x => x.CurrentPage.Genre), @Html.PropertyFor(x => x.CurrentPage.AgeLimit)</p>
             <hr />
-            <p>Premiär: @Html.PropertyFor(x => x.CurrentPage.Premiere)</p>
+            <p><span>Premiär:</span> @Html.PropertyFor(x => x.CurrentPage.Premiere)</p>
             <hr />
             <p>Speltid: @Html.PropertyFor(x => x.CurrentPage.DurationTime)</p>
             <hr />
-            <p>Regissör: @Html.PropertyFor(x => x.Director)</p>
+            <p>Regissör: @Html.PropertyFor(x => x.CurrentPage.Director)</p>
             <hr />
-            <p>Orginal språk: @Html.PropertyFor(x => x.OriginalLanguage)</p>
+            <p>Orginal språk: @Html.PropertyFor(x => x.CurrentPage.OrginalLanguage)</p>
             <hr />
-            <p>Skådespelare:</p>
+            <p>Skådespelare: @Html.PropertyFor(x => x.CurrentPage.Actors)</p>
             <hr />
             <p>Pris: @Model.CurrentPage.Price kr</p>
         </div>
@@ -69,6 +69,7 @@
         <table>
             <tr class="productpage-gettickets__header">
                 <th class="productpage-gettickets__header-text">Tid</th>
+                <th>Salong</th>
                 <th>Platser kvar</th>
                 <th></th>
             </tr>
@@ -77,6 +78,22 @@
             {
                 <tr>
                     <td>@movie.Time</td>
+                    @if (Model.CurrentPage.Show1 != null)
+                    {
+                        <td>@Model.CurrentPage.Show1</td>
+                    }
+                    @*@if (Model.CurrentPage.Show2 != null)
+                    {
+                        <td>@Model.CurrentPage.Show2</td>
+                    }
+                    @if (Model.CurrentPage.Show3 != null)
+                    {
+                        <td>@Model.CurrentPage.Show3</td>
+                    }
+                    @if (Model.CurrentPage.Show4 != null)
+                    {
+                        <td>@Model.CurrentPage.Show4</td>
+                    }*@
                     <td style="text-align: center">25</td>
                     <td>@Model.CurrentPage.ButtonReserv</td>
                 </tr>

@@ -27,6 +27,18 @@ namespace BioStockholm.Web.Models.Pages
 
         [CultureSpecific]
         [Display(
+            GroupName = Global.TabNames.Shows,
+            Order = 30)]
+        public virtual CategoryList Show3 { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = Global.TabNames.Shows,
+            Order = 40)]
+        public virtual CategoryList Show4 { get; set; }
+
+        [CultureSpecific]
+        [Display(
             GroupName = SystemTabNames.Content,
             Order = 6)]
         public virtual CategoryList Genre { get; set; }
@@ -97,6 +109,12 @@ namespace BioStockholm.Web.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 55)]
         public virtual string Director { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 57)]
+        public virtual string Actors { get; set; }
 
         [CultureSpecific]
         [Display(

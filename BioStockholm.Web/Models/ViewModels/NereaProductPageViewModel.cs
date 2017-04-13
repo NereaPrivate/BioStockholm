@@ -31,6 +31,8 @@ namespace BioStockholm.Web.Models.ViewModels
 
         public List<DateTime> CurrentWeek { get; set; }
 
-        public List<TimeSeats> TimeSeats { get; set; }
+        //public List<Show> TimeSeats { get; set; }
+
+        public List<SalongPage> Shows { get; set; }
     }
 }

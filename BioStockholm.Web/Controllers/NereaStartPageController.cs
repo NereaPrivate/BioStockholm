@@ -38,7 +38,7 @@ namespace BioStockholm.Web.Controllers
                 var listPage = _contentRepository.Get<NereaProductListPage>(currentPage.ProductPage);
                 products =
                     _contentRepository.GetChildren<NereaProductPage>(listPage.ContentLink)
-                        .OrderByDescending(x => x.Premiere).Take(10).ToList();
+                        .OrderByDescending(x => x.Premiere).Take(10).Reverse().ToList();
 
             }
 

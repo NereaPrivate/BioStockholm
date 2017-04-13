@@ -2,7 +2,6 @@ using System;
 using System.Web;
 using BioStockholm.Web.Models.Pages;
 using EPiServer.Find.UnifiedSearch;
-using BioStockholm.Web.Models.ViewModels;
 using EPiServer.ServiceLocation;
 using EPiServer.Find.Framework.Statistics;
 using EPiServer;

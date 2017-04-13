@@ -16,7 +16,11 @@ namespace BioStockholm.Web.Models.Pages
     [SiteImageUrl(Global.StaticGraphicsFolderPath + "page-type-thumbnail-product.png")]
     [AvailableContentTypes( 
         Availability = Availability.Specific,
-        IncludeOn = new[] { typeof(StartPage) })]
+        IncludeOn = new[]
+        {
+            typeof(StartPage),
+            typeof(SalongPage)
+        })]
     public class ProductPage : StandardPage, IHasRelatedContent
     {
         [Required]

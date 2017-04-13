@@ -347,6 +347,8 @@
     <Compile Include="Business\Channels\WebChannel.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\ContentLocator.cs" />
+    <Compile Include="Business\CustomProperties\DropdownTime\TimeDescriptor.cs" />
+    <Compile Include="Business\CustomProperties\DropdownTime\TimeFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
     <Compile Include="Business\EditorDescriptors\HideCategoryEditorDescriptor.cs" />
@@ -371,6 +373,7 @@
     <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
     <Compile Include="Business\StructureMapDependencyResolver.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
+    <Compile Include="Controllers\BookingPageController.cs" />
     <Compile Include="Controllers\ContactBlockController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />
     <Compile Include="Controllers\FindSearchPageController.cs" />
@@ -406,6 +409,7 @@
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Media\VideoFile.cs" />
     <Compile Include="Models\Pages\ArticlePage.cs" />
+    <Compile Include="Models\Pages\BookingPage.cs" />
     <Compile Include="Models\Pages\ContactPage.cs" />
     <Compile Include="Models\Pages\ContainerPage.cs" />
     <Compile Include="Models\Pages\FindSearchPage.cs" />
@@ -417,14 +421,17 @@
     <Compile Include="Models\Pages\NereaStartPage.cs" />
     <Compile Include="Models\Pages\NewsPage.cs" />
     <Compile Include="Models\Pages\ProductPage.cs" />
+    <Compile Include="Models\Pages\SalongPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StandardPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Models\Properties\PropertyStringList.cs" />
     <Compile Include="Models\Register\RegisterViewModel.cs" />
+    <Compile Include="Models\Salong.cs" />
     <Compile Include="Models\SiteContentType.cs" />
     <Compile Include="Models\SiteImageUrl.cs" />
-    <Compile Include="Models\TimeSeats.cs" />
+    <Compile Include="Models\Show.cs" />
+    <Compile Include="Models\ViewModels\BookingPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ContactBlockModel.cs" />
     <Compile Include="Models\ViewModels\ContentRenderingErrorModel.cs" />
     <Compile Include="Models\ViewModels\FindSearchContentModel.cs" />
@@ -578,6 +585,7 @@
     <Content Include="Views\SlideShowBlock\Index.cshtml" />
     <Content Include="Views\NereaProductListPage\Index.cshtml" />
     <Content Include="Views\NereaProductPage\Index.cshtml" />
+    <Content Include="Views\BookingPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

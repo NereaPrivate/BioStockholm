@@ -11,7 +11,10 @@ namespace BioStockholm.Web.Models.Pages
     [SiteImageUrl]
     [AvailableContentTypes(
          Availability.Specific,
-         Include = new[]{typeof(NereaProductListPage)/*, typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage), typeof(ContentFolder)*/})] // Pages we can create under the start page...
+         Include = new[]{
+             typeof(NereaProductListPage),
+             typeof(BookingPage)
+             /*, typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage), typeof(ContentFolder)*/})] // Pages we can create under the start page...
         //ExcludeOn = new[] { typeof(ContainerPage), typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage) })]
     public class NereaStartPage : SitePageData
     {
@@ -31,6 +34,12 @@ namespace BioStockholm.Web.Models.Pages
         [Display(
             GroupName = SystemTabNames.Content,
             Order = 20)]
+        public virtual ContentReference BookingPage { get; set; }
+
+        [CultureSpecific]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 30)]
         public virtual string Header { get; set; }
 
         public override void SetDefaultValues(ContentType contentType)

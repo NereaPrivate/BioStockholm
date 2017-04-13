@@ -4,6 +4,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using BioStockholm.Web.Business.Rendering;
 using BioStockholm.Web.Models.Properties;
+using EPiServer.ServiceLocation;
 using EPiServer.Web;
 
 namespace BioStockholm.Web.Models.Pages

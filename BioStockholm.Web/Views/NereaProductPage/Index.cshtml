@@ -1,7 +1,13 @@
-﻿@model NereaProductPageViewModel
-
+﻿@using BioStockholm.Web.Business.Extensions
+@using EPiServer
+@using EPiServer.ServiceLocation
+@using EPiServer.Shell
+@using EPiServer.Web
+@model NereaProductPageViewModel
+    
 @{
-
+    var _contentLoader = ServiceLocator.Current.GetInstance<IContentRepository>();
+    var startPage = _contentLoader.Get<NereaStartPage>(SiteDefinition.Current.StartPage);
 }
 
 <div class="productpage-container">
@@ -65,6 +71,7 @@
             }
         </select>
     </div>
+
     <div class="productpage-gettickets">
         <table>
             <tr class="productpage-gettickets__header">
@@ -74,30 +81,15 @@
                 <th></th>
             </tr>
 
-            @foreach (var movie in Model.TimeSeats)
+            @foreach (var show in Model.Shows)
             {
                 <tr>
-                    <td>@movie.Time</td>
-                    @if (Model.CurrentPage.Show1 != null)
-                    {
-                        <td>@Model.CurrentPage.Show1</td>
-                    }
-                    @*@if (Model.CurrentPage.Show2 != null)
-                    {
-                        <td>@Model.CurrentPage.Show2</td>
-                    }
-                    @if (Model.CurrentPage.Show3 != null)
-                    {
-                        <td>@Model.CurrentPage.Show3</td>
-                    }
-                    @if (Model.CurrentPage.Show4 != null)
-                    {
-                        <td>@Model.CurrentPage.Show4</td>
-                    }*@
-                    <td style="text-align: center">25</td>
-                    <td>@Model.CurrentPage.ButtonReserv</td>
+                    <td>@show.Time</td>
+                    <td>@show.SalongName</td>
+                    <td style="text-align: center">45</td>
+                        
+                    <td><a href="@startPage.BookingPage.Url()">Reservera</a></td>
                 </tr>
-
             }
         </table>
     </div>

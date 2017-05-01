@@ -291,3 +291,76 @@
     padding-right: 50px;
     padding-bottom: 10px;
 }
+
+
+/*------ bookingpage -------------*/
+
+.bookingpage-container {
+     max-width: 1145px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.bookingpage-reservation {
+    width: 700px;
+    height: 315px;
+    display: inline-block;
+    background-color: #e6e6e6;
+}
+
+.bookingpage-gettickets {
+    float: right;
+    width: 420px;
+    height: 315px;
+    background-color: #e6e6e6;
+}
+
+.bookingpage-salong {
+    float: right;
+    background-color: darkgrey;
+    width: 300px;
+}
+
+.bookingpage-salong table {
+   margin-top: 20px;
+   margin-left: 40px;
+}
+
+.bookingpage-salong table td {
+    padding-right: 8px;
+}
+
+.bookingpage-salong-duken {
+    background-color: whitesmoke;
+    width: 150px;
+    height: 10px;
+    margin-left: 60px;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+input[type=number] {
+    height: 20px;
+    width: 45px;
+    padding-left: 10px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+/*.bookingpage-salong tr td {
+    background-color: white !important;
+}*/
+
+/*.bookingpage-salong-checkbox {
+   background-color: #380606 !important; 
+}*/

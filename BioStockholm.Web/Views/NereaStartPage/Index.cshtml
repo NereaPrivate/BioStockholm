@@ -21,6 +21,7 @@
                 <a href="@product.ContentLink.Url()">
                     <img src="@Url.ContentUrl(product.Image)" />
                     <h5>@product.Name</h5>
+                    <p>Premiär: @product.Premiere.ToString("dd MMMM")</p>
                 </a>
             </li>
         }

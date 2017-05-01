@@ -7,14 +7,29 @@ namespace BioStockholm.Web.Business.CustomProperties.DropdownTime
     {
         public IEnumerable<ISelectItem> GetSelections(ExtendedMetadata metadata)
         {
-            var times = new List<SelectItem>
-        {
-            new SelectItem { Value = "12:00", Text = "12:00" },
-            new SelectItem { Value = "14:00", Text = "14:00" },
-            new SelectItem { Value = "16:00", Text = "16:00" }
-        };
+            return new ISelectItem[]
+            {
+                new SelectItem()
+                {
+                    Text = "Sterling",
+                    Value = "GBP"
+                },
 
-            return times;
+                new SelectItem()
+                {
+                    Text = "Dollars",
+                    Value = "USD"
+                }
+            };
+            //    var times = new List<SelectItem>
+            //{
+            //    new SelectItem { Value = "12:00", Text = "12:00" },
+            //    new SelectItem { Value = "14:00", Text = "14:00" },
+            //    new SelectItem { Value = "16:00", Text = "16:00" }
+            //};
+
+            //    return times;
+            //}
         }
     }
 }

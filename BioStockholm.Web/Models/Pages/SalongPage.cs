@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using BioStockholm.Web.Business.CustomProperties.DropdownTime;
+using BioStockholm.Web.Business.CustomProperties.DropDownSalong;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using EPiServer.Shell.ObjectEditing;
 
 namespace BioStockholm.Web.Models.Pages
 {
@@ -13,6 +16,7 @@ namespace BioStockholm.Web.Models.Pages
         [Display(
             GroupName = SystemTabNames.Content,
             Order = 10)]
+        [SelectOne(SelectionFactoryType = typeof(SalongFactory))]
         public virtual string SalongName { get; set; }
 
         [CultureSpecific]
@@ -20,6 +24,7 @@ namespace BioStockholm.Web.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 20)]
         //[UIHint("Tider")]
+        [SelectOne(SelectionFactoryType = typeof(TimeFactory2))]
         public virtual string Time { get; set; }
     }
 }

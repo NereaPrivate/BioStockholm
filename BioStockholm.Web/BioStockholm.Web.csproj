@@ -347,8 +347,10 @@
     <Compile Include="Business\Channels\WebChannel.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\ContentLocator.cs" />
+    <Compile Include="Business\CustomProperties\DropDownSalong\SalongFactory.cs" />
     <Compile Include="Business\CustomProperties\DropdownTime\TimeDescriptor.cs" />
     <Compile Include="Business\CustomProperties\DropdownTime\TimeFactory.cs" />
+    <Compile Include="Business\CustomProperties\DropdownTime\TimeFactory2.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
     <Compile Include="Business\EditorDescriptors\HideCategoryEditorDescriptor.cs" />
